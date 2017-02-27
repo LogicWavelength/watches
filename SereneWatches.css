@@ -1,7 +1,140 @@
-/* Serene Single
-Stylesheet by qtx
-Release date: April 28th, 2015
-Details: AskReddit based theme for use on single subs */
+/* SereneWatches
+Stylesheet by qtx / LogicWavelength
+Release Version: 1.0
+Details: AskReddit based theme for use on single subs
+Note: lines that have been modified for /r/Watches contain the flag 'MODDED'
+
+Colors (old / new):
+
+body bakground #ffffff
+gold-accent background #fffdcc
+report-action-form background #ffecb3
+#ff8c69
+#ff7500
+#ff4500
+#ff0000
+#fef5d3
+#feb8ac
+#fe9785
+#fdfdff
+#fdfdfd
+#fcfcfc
+#fafcfe
+#fafbfc
+#faf3e3
+#fa8072
+#f9f9f9
+#f9f5c2
+#f9acb4
+#f7f7f7
+#f6f6f6
+#f6e69f
+#f5fafe
+#f5ef9e
+#f4eef0
+#f4e18d
+#f3f3f3
+#f36c60
+#f2f4f7
+#f0f7fd
+#f0f3fc
+#f06292
+#efefef
+#eef8f7
+#eeeeee
+#eeeaf3
+#ee5e91
+#ec9d57
+#eb6c00
+#eb4000
+#ea9345
+#e9f3fc
+#e9edef
+#e9cf5c
+#e8f5e9
+#e74c3c
+#e67e22
+#e2e2e2
+#e0f2f1
+#e05d6f
+#dee5e7
+#de576c
+#dde3e6
+#dddddd
+#dbedff
+#dbd7d5
+#db475e
+#dadfe3
+#d5d5d5
+#d2eceb
+#cfcfff
+#cccccc
+#c27883
+#c2185b
+#c12666
+#c0c0c0
+#c0392b
+#bc6a77
+#bbbbff
+#bbbbbb
+#b65d6a
+#b0bec5
+#b04f5e
+#aebfc7
+#aaaaaa
+#a8a8ff
+#a5b5bd
+#a2b5bf
+#a1887f
+#a02f24
+#98cbed
+#988143
+#9494ff
+#93b7be
+#92d1c3
+#91c499
+#8dc44e
+#888888
+#84cbbb
+#82cdb9
+#808080
+#7f8bc9
+#777777
+#71bd73
+#69b391
+#66c2a9
+#666666
+#616f77
+#607d8b
+#5ea96a
+#5da460
+#5cac87
+#5a8b95
+#586698
+#559e60
+#4e5864
+#454e59
+#444444
+#439b4a
+#3c444e
+#3498db
+#333333
+#313e3e
+#2a3f4d
+#268fd6
+#2384c5
+#228822
+#21504d
+#1abc9c
+#111111
+#009688
+#00897b
+#0079d3
+#0055df
+#0050a1
+#000000
+
+*/
 
 html { position: relative; }
 
@@ -11,7 +144,10 @@ html { position: relative; }
 /* Header */
     #header {
         border-bottom: 0;
-        background-color: #f0f7fd;
+        height: 220px; /*MODDED*/
+        /*background-color: #f0f7fd;*/ /*MODDED*/
+        background: url(%%banner-breguet%%) no-repeat center center; /*MODDED*/
+        background-size:cover; /*MODDED*/
         margin: 0 8px;
         border-left: 1px solid #dee5e7;
         border-right: 1px solid #dee5e7; }
@@ -74,15 +210,29 @@ html { position: relative; }
     #RESShortcutsAdd:hover { opacity: 1; }
 
 /* Logos etc */
-    #header-img { margin: 10px 5px 0 15px; }
+    #header-img { background-image:url(%%reddit-new-gear%%) no-repeat center center; width: 180px; height: 60px; margin: 100px 5px -10px 5px; } /*MODDED*/
     body.with-listing-chooser #header .pagename { position: absolute; top: 54px; }
+    #header .name { color: #eee; }
+    .pagename a { /*MODDED*/
+        background-image:url(%%watches-logo%%); /*MODDED*/
+        background-repeat:no-repeat; /*MODDED*/
+        background-size:contain; /*MODDED*/
+        position:absolute; /*MODDED*/
+        display:block; /*MODDED*/
+        height:60px; /*MODDED*/
+        width:170px; /*MODDED*/
+        left:180px; /*MODDED*/
+        margin-top:-53px; /*MODDED*/
+        text-indent:-9999px; /*MODDED*/
+        z-index:99; } /*MODDED*/
+.pagename a:hover { background-image:url(%%watches-logo2%%); }/*MODDED*/
 
 /* Tab Menu */
     #header:after {
         content: "";
         padding-left: 15px;
         height: 40px;
-        margin : 0;
+        margin-top: 10px;
         display: block;
         background: #454e59;
         line-height: 40px;
@@ -99,7 +249,7 @@ html { position: relative; }
         position: absolute;
         left: 11px;
         height: 40px;
-        margin-top: 0; }
+        margin-top: 110px; } /*MODDED*/
 
     #header-bottom-left .tabmenu  { top: 72px; }
     .res #header-bottom-left .tabmenu { top: 71px; }
@@ -148,7 +298,7 @@ html { position: relative; }
     #header #header-bottom-right,
     .res #header #header-bottom-right {
         position: absolute;
-        top: 71px;
+        top: 181px; /*MODDED*/
         background: transparent;
         padding: 0 0 0 10px;
         height: 40px;
@@ -204,14 +354,15 @@ html { position: relative; }
     #header-bottom-right #mail.havemail { background: url(%%q-spritesheet-2%%) -95px -5px no-repeat; border-right: 1px solid rgba(225,255,255,.25);  }
     #header-bottom-right #mail.havemail { background-color: #FF7500; }
 
-    #header-bottom-right #modmail, #new_modmail.nohavemail {
+    #header-bottom-right #modmail, #new_modmail.havemail, #new_modmail.nohavemail { /*MODDED*/
         margin: 0;
         top: 0;
-vertical-align: top;
+        vertical-align: top;
         width: 35px;
         height: 40px;
         border-right: 1px solid rgba(225,255,255,.25); }
-#new_modmail.nohavemail { background: url(%%q-shield%%) center no-repeat; }
+    #new_modmail.havemail { background: url(%%q-shield-2%%) center no-repeat; } /*MODDED*/
+    #new_modmail.nohavemail { background: url(%%q-shield%%) center no-repeat; }
     #header-bottom-right #modmail.havemail { background: url(%%q-spritesheet-2%%) -50px -5px no-repeat #ff4500; }
     #header-bottom-right #modmail.nohavemail { background: url(%%q-spritesheet-2%%) -140px -5px no-repeat; }
     #header-bottom-right .flat-list, .loggedin .logout { display: inline-block; vertical-align: top; }
@@ -228,7 +379,7 @@ vertical-align: top;
     #header-bottom-right #mail:hover,
     #header-bottom-right #modmail:hover,
     #header-bottom-right a.pref-lang:hover, .loggedin .logout a:hover,
-    .gearIcon:hover, #new_modmail.nohavemail:hover { background-color: #3c444e!important; }
+    .gearIcon:hover, #new_modmail.havemail:hover, #new_modmail.nohavemail:hover { background-color: #3c444e!important; } /*MODDED*/
     #header-bottom-right #mail.havemail:hover { background-color: #eb6c00!important; }
     #header-bottom-right #modmail.havemail:hover { background-color: #eb4000!important; }
 .gearIcon::after {display:none;}
@@ -1306,7 +1457,7 @@ vertical-align: top;
 /* Credits */
     .debuginfo:before {
         float: left;
-        content: "css by /u/qtx";
+        content: "css by /u/qtx, modified by /u/LogicWavelength"; /*MODDED*/
         display: block;
         position: relative;
         color: gray;
